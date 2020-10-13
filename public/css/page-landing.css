@@ -1,0 +1,68 @@
+#page-landing{
+    background: linear-gradient(329.54deg, #29b6d1 0%, #00c7c7 100%);
+    text-align: center;
+    min-height: 100vh;
+    /*alinhar todos os itens internos*/
+    display: flex;
+    align-items: center;
+}
+
+#container{
+/* outra forma de alinhar uma caixa - esse alinha em todos os lados */
+    margin: auto;
+    width: 90%;
+    
+}
+
+.location, h1, .visit p{
+    height: 16vh;
+}
+
+.visit a{
+    width: 8rem;
+    height: 8rem;
+    background: #FFd666;
+
+    border: none;
+    border-radius: 3rem;
+    
+    display: flex;
+    /*alinhamento no eixo X: */
+    align-items: center;
+    /*alinhamento no eixo Y: */
+    justify-content: center;
+    
+    margin: 0 auto;
+
+    transition: background 200ms;
+}
+
+.visit a:hover{
+    background: #96feff;
+}
+
+.animate-up {
+    animation-name: up;
+    animation-duration: 300ms;
+    animation-fill-mode: backwards;
+}
+
+#logo {
+    animation-delay: 50ms;
+}
+
+.location {
+    animation-delay: 100ms;
+}
+
+main h1 {
+    animation-delay: 150ms;
+}
+
+.visit p {
+    animation-delay: 200ms;
+}
+
+.visit a {
+    animation-delay: 250ms;
+}
