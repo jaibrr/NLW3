@@ -1,6 +1,6 @@
 Welcome to the NLW3 wiki!
 
-![Logomarca Happy](https://github.com/jabrr/NLW3/blob/main/public/images/logo_happy.svg)
+![Logomarca Happy](https://raw.githubusercontent.com/jaibrr/NLW3/main/public/images/logo.svg)
 
 <h2> 💻 Projeto</h2>
 
