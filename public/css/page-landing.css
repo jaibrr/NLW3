@@ -10,12 +10,29 @@
 #container{
 /* outra forma de alinhar uma caixa - esse alinha em todos os lados */
     margin: auto;
-    width: 90%;
-    
+
+    width: min(90%, 112rem); /*escolhe o menor entre 90% ou 1120px*/
 }
 
 .location, h1, .visit p{
     height: 16vh;
+}
+
+#logo {
+    animation-delay: 50ms;
+}
+
+.location {
+    animation-delay: 100ms;
+}
+
+main h1 {
+    animation-delay: 150ms;
+    font-size: clamp(4rem, 8vw, 8.4rem);/*limite mínimo, o que quero, limiite máximo - o clamp permite que o texto se adeque*/
+}
+
+.visit p {
+    animation-delay: 200ms;
 }
 
 .visit a{
@@ -35,6 +52,8 @@
     margin: 0 auto;
 
     transition: background 200ms;
+
+    animation-delay: 250ms;
 }
 
 .visit a:hover{
@@ -47,22 +66,39 @@
     animation-fill-mode: backwards;
 }
 
-#logo {
-    animation-delay: 50ms;
-}
+/*Desktop version*/
+/*tem que ter a meta de viewport*/
 
-.location {
-    animation-delay: 100ms;
-}
+@media (min-width: 760px) {
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /*só dá pra usar no displayflex*/
+    }
 
-main h1 {
-    animation-delay: 150ms;
-}
+    .location, h1, .visit p {
+        height: initial;
+        text-align: initial;
+    }
 
-.visit p {
-    animation-delay: 200ms;
-}
+    .location{
+        line-height: 1.5;;
+        font-size: 2.4rem;
+        text-align: right;
+    }
 
-.visit a {
-    animation-delay: 250ms;
+    main h1 { /*esse traz mais especificidade, então é mais forte do que h1 sozinho*/
+        font-weight: bold;
+        line-height: .88;
+
+        margin: clamp(10%, 9vh, 12%) 0 4rem;
+
+        width: min(300px, 80%); /*mesma lógica do head de cima*/
+    }
+
+    .visit p{
+        font-size: 2.4rem;
+        line-height: 1.5;
+        width: clamp(20rem, 20vw, 30rem);
+    }
 }
