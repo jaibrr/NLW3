@@ -1,104 +1,122 @@
-#page-landing{
-    background: linear-gradient(329.54deg, #29b6d1 0%, #00c7c7 100%);
-    text-align: center;
-    min-height: 100vh;
-    /*alinhar todos os itens internos*/
-    display: flex;
-    align-items: center;
+#page-landing {
+  background: linear-gradient(329.54deg, #29b6d1 0%, #00c7c7 100%);
+
+  text-align: center;
+  min-height: 100vh;
+  /*alinhar todos os itens internos*/
+  display: flex;
+  align-items: center;
 }
 
-#container{
-/* outra forma de alinhar uma caixa - esse alinha em todos os lados */
-    margin: auto;
+#container {
+  /* outra forma de alinhar uma caixa - esse alinha em todos os lados */
+  margin: auto;
 
-    width: min(90%, 112rem); /*escolhe o menor entre 90% ou 1120px*/
+  width: min(90%, 112rem); /*escolhe o menor entre 90% ou 1120px*/
 }
 
-.location, h1, .visit p{
-    height: 16vh;
+.location,
+h1,
+.visit p {
+  height: 16vh;
 }
 
 #logo {
-    animation-delay: 50ms;
+  animation-delay: 50ms;
 }
 
 .location {
-    animation-delay: 100ms;
+  animation-delay: 100ms;
 }
 
 main h1 {
-    animation-delay: 150ms;
-    font-size: clamp(4rem, 8vw, 8.4rem);/*limite mínimo, o que quero, limiite máximo - o clamp permite que o texto se adeque*/
+  animation-delay: 150ms;
+  font-size: clamp(
+    4rem,
+    8vw,
+    8.4rem
+  ); /*limite mínimo, o que quero, limiite máximo - o clamp permite que o texto se adeque*/
 }
 
 .visit p {
-    animation-delay: 200ms;
+  animation-delay: 200ms;
 }
 
-.visit a{
-    width: 8rem;
-    height: 8rem;
-    background: #FFd666;
+.visit a {
+  width: 8rem;
+  height: 8rem;
+  background: #ffd666;
 
-    border: none;
-    border-radius: 3rem;
-    
-    display: flex;
-    /*alinhamento no eixo X: */
-    align-items: center;
-    /*alinhamento no eixo Y: */
-    justify-content: center;
-    
-    margin: 0 auto;
+  border: none;
+  border-radius: 3rem;
 
-    transition: background 200ms;
+  display: flex;
+  /*alinhamento no eixo X: */
+  align-items: center;
+  /*alinhamento no eixo Y: */
+  justify-content: center;
 
-    animation-delay: 250ms;
+  margin: 0 auto;
+  transition: background 200ms;
+  animation-delay: 250ms;
 }
 
-.visit a:hover{
-    background: #96feff;
-}
-
-.animate-up {
-    animation-name: up;
-    animation-duration: 300ms;
-    animation-fill-mode: backwards;
+.visit a:hover {
+  background: #96feff;
 }
 
 /*Desktop version*/
 /*tem que ter a meta de viewport*/
 
 @media (min-width: 760px) {
-    header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between; /*só dá pra usar no displayflex*/
-    }
+  #container {
+    padding: 5rem 2rem;
+    /*shorthand backgrounh: image repeat position size*/
+    background: url(../images/bg.svg) no-repeat 80% / clamp(30rem, 54vw, 56rem);
+  }
 
-    .location, h1, .visit p {
-        height: initial;
-        text-align: initial;
-    }
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /*só dá pra usar no displayflex*/
+  }
 
-    .location{
-        line-height: 1.5;;
-        font-size: 2.4rem;
-        text-align: right;
-    }
+  .location,
+  h1,
+  .visit p {
+    height: initial;
+    text-align: initial;
+  }
 
-    main h1 { /*esse traz mais especificidade, então é mais forte do que h1 sozinho*/
-        font-weight: bold;
-        line-height: .88;
+  .location {
+    line-height: 1.5;
+    font-size: 2.4rem;
+    text-align: right;
+  }
 
-        margin: clamp(10%, 9vh, 12%) 0 4rem;
+  main h1 {
+    /*esse traz mais especificidade, então é mais forte do que h1 sozinho*/
+    font-weight: bold;
+    line-height: 0.88;
 
-        width: min(300px, 80%); /*mesma lógica do head de cima*/
-    }
+    margin: clamp(10%, 9vh, 12%) 0 4rem;
 
-    .visit p{
-        font-size: 2.4rem;
-        line-height: 1.5;
-        width: clamp(20rem, 20vw, 30rem);
-    }
+    width: min(300px, 80%); /*mesma lógica do head de cima*/
+  }
+
+  .visit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .visit p {
+    font-size: 2.4rem;
+    line-height: 1.5;
+    width: clamp(20rem, 20vw, 30rem);
+  }
+
+  .visit a {
+    margin: initial;
+  }
 }
