@@ -24,6 +24,8 @@
     <link rel="stylesheet" href="./public/css/page-create-orphanage.css" />
     <link rel="stylesheet" href="./public/css/animations.css" />
     <link rel="stylesheet" href="./public/css/sidebar.css" />
+    <link rel="stylesheet" href="./public/css/map.css" />
+    <link rel="stylesheet" href="./public/css/forms.css" />
 
     <link
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap"
@@ -31,7 +33,7 @@
     />
   </head>
   <body>
-    <div id="create-orphanage">
+    <div id="page-create-orphanage">
       <aside class="animate-right sidebar">
         <img src="./public/images/map-marker.svg" alt="Happy" />
         <footer>
@@ -45,7 +47,33 @@
 
         <form action="">
           <fieldset>
-            <leged>Dados</leged>
+            <legend>Dados</legend>
+
+
+            <div class="map-container">
+              <div id="mapid"></div>
+              <footer>
+                <a href="">Ver rotas no Google Maps</a>
+              </footer>
+            </div>
+
+            <div class="input-block">
+              <label for="name">Nome</label>
+              <input id="name" name="name">
+             </div>
+
+             <div class="input-block">
+              <label for="about">Sobre</label>
+              <textarea id="about" name="about"></textarea>
+             </div>
+
+             <div class="input-block">
+              <label for="whatsapp">Número de WhatsApp</label>
+              <input id="whatsapp" name="whatsapp">
+             </div>
+
+
+          </fieldset>
 
             <fieldset>
               <legend>Visitação</legend>
