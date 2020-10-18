@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Orfanato Lar das Meninas</title>
+    <title>Adicionar um orfanato | Happy</title>
 
     <link
       rel="stylesheet"
@@ -25,7 +25,8 @@
     <link rel="stylesheet" href="./public/css/animations.css" />
     <link rel="stylesheet" href="./public/css/sidebar.css" />
     <link rel="stylesheet" href="./public/css/map.css" />
-    <link rel="stylesheet" href="./public/css/forms.css" />
+    <link rel="stylesheet" href="./public/css/form.css" />
+    <link rel="stylesheet" href="./public/css/buttons.css" />
 
     <link
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap"
@@ -44,14 +45,14 @@
       </aside>
 
       <main class="animate-appear with-sidebar">
-
         <form action="">
           <fieldset>
             <legend>Dados</legend>
 
-
             <div class="map-container">
               <div id="mapid"></div>
+              <input type="hidden" name="lat">
+              <input type="hidden" name="lng">
               <footer>
                 <a href="">Ver rotas no Google Maps</a>
               </footer>
@@ -59,28 +60,94 @@
 
             <div class="input-block">
               <label for="name">Nome</label>
-              <input id="name" name="name">
+              <input id="name" name="name" required>
              </div>
 
              <div class="input-block">
-              <label for="about">Sobre</label>
-              <textarea id="about" name="about"></textarea>
+              <label for="about">Sobre <span>Máximo  de 300 caracteres</span> </label>
+              <textarea id="about" name="about" required></textarea>
              </div>
 
              <div class="input-block">
               <label for="whatsapp">Número de WhatsApp</label>
-              <input id="whatsapp" name="whatsapp">
+              <input id="whatsapp" name="whatsapp" required />
              </div>
 
+             <div class="input-block images">
+              <label for="images">Fotos</label>
 
+              <div class="images-upload" id="images">
+                <div class="new-upload">
+                  <input 
+                    name="images" 
+                    placeholder="Cole o lnk da foto aqui" 
+                    required
+                    />
+                  <span onclick="deleteField(event)">
+                    <img 
+                      src="./public/images/remove-file.svg" 
+                      alt="Remover foto">  
+                  </span>
+                </div>
+              </div>
+
+
+              <button onclick="addPhotoField()"
+              type="button">
+                <img 
+                src="./public/images/add-file.svg" 
+                alt="Nova imagem"/>
+              </button>
+            </div>
           </fieldset>
 
             <fieldset>
               <legend>Visitação</legend>
+
+              <div class="input-block">
+                <label for="instructions">Instruções</label>
+                <textarea 
+                id="instructions" 
+                name="instructions" 
+                required></textarea>
+               </div>
+
+               <div class="input-block">
+                <label for="opening-hours">Horário das visitas</label>
+                <input 
+                id="opening-hours" 
+                name="opening-hours" 
+                required/>
+               </div>
+
+                <div class="input-block">
+                  <label for="opening-on-weekends">Atende fim de semana?</label>
+                  <input 
+                  type="hidden" 
+                  id="open-on-weekends" 
+                  name="open-on-weekends" 
+                  value="1"
+                  required
+                  />
+
+                  <div class="button-select">
+                    <button data-value="1"
+                    onclick="toggleSelect(event)" 
+                    type="button" 
+                    class="active">Sim</button>
+                    <button data-value="0"
+                    onclick="toggleSelect(event)" 
+                    type="button">Não</button>
+                  </div>
+
+                  <button type="submit" class="primary-button">
+                    Confirmar
+                  </button>
+
+                </div>
             </fieldset>
           </fieldset>
-
-
+        </form>
       </main>
     </div>
 
