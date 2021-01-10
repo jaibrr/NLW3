@@ -100,3 +100,15 @@ function toggleSelect(event){
     input.value = button.dataset.value
 
 }
+
+function validate(event){
+
+    //validar se lat e lng estão preenchidos
+    /*const la = document.querySelector('[name="lat"]')
+    const ln= document.querySelector('[name="lng"]')
+
+    la && ln == '' ? event.preventDeult() : true*/
+
+    event.preventDeult()
+    alert('Preencha todos os campos')
+}
